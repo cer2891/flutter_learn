@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,38 +12,81 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.teal,
         body: SafeArea(
           // наглядно показано тут https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
-          child: Row(
-//            mainAxisAlignment: MainAxisAlignment.spaceBetween ,// расположение между
-            // verticalDirection: VerticalDirection.up, снизу начинаются
-            crossAxisAlignment: CrossAxisAlignment.stretch, // по вертикали
+          // цвета,иконки https://www.materialpalette.com/icons
+          // шрифты https://fonts.google.com/
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-//                height: 100,
-//                width: double.infinity,
-                width: 30,
-                color: Colors.white,
-                child: Text('Container 1'),
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/avatar.jpg'),
+              ),
+              Text(
+                'Sergey Programm',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'FLUTTER DEVELOPER',
+                style: TextStyle(
+                  fontFamily: 'SansPro',
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.teal.shade100,
+                  letterSpacing: 2.0,
+                ),
               ),
               SizedBox(
-//                height: 20,
-                width: 20,
+                height: 10,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
               ),
-              Container(
-                height: 100,
-//                width: 100,
-//                width: double.infinity,
-                color: Colors.white60,
-                child: Text('Container 2'),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+//                padding: EdgeInsets.all(10),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '+7 999-777-56-78',
+                    style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'SansPro',
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
               ),
-              Container(
-                height: 100,
-//                width: 100,
-//                width: double.infinity,
-                color: Colors.red,
-                child: Text('Container 3'),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+//                padding: EdgeInsets.all(10),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'test@yandex.ru',
+                    style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'SansPro',
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -51,3 +95,43 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//Row(
+//children: [
+//Icon(
+//Icons.phone,
+//color: Colors.teal,
+//),
+//SizedBox(
+//width: 20,
+//),
+//Text(
+//'+7 999-777-56-78',
+//style: TextStyle(
+//color: Colors.teal.shade900,
+//fontFamily: 'SansPro',
+//fontSize: 20,
+//),
+//),
+//],
+//),
+
+//child: Row(
+//children: [
+//Icon(
+//Icons.email,
+//color: Colors.teal,
+//),
+//SizedBox(
+//width: 20,
+//),
+//Text(
+//'test@yandex.ru',
+//style: TextStyle(
+//color: Colors.teal.shade900,
+//fontFamily: 'SansPro',
+//fontSize: 20,
+//),
+//),
+//],
+//),
